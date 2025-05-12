@@ -2,8 +2,8 @@ import dayjs from 'dayjs'
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "./ui/button";
-//import DisplayTechIcons from "./DisplayTechIcons";
 import {getRandomInterviewCover} from "@/lib/utils"
+import DisplayTechIcons from './DisplayTechIcons';
 
 
 const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}: InterviewCardProps) =>{
@@ -41,7 +41,7 @@ const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}: 
                 </div>
 
                 <div className='flex flex-row justify-between'>
-                    <p>Tech Icons</p>
+                    <DisplayTechIcons techStack={techstack}/>
 
                     <Button className='btn-primary'>
                         <Link href={feedback ? `/interview/${interviewId}/feedback` : `/interview/${interviewId}`}>
